@@ -11,6 +11,7 @@ namespace circularPrime
         static void Main(string[] args)
         {
             PrimeSarch search = new PrimeSarch();
+            Console.WriteLine(search.amount);
         }
     }
 }

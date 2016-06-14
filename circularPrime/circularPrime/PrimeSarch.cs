@@ -10,14 +10,15 @@ namespace circularPrime
 {
     class PrimeSarch
     {
-        
 
-        static PrimeSarch()
+        public int amount;
+
+        public PrimeSarch(int finalNumber = 1000000)
         {
-            Console.WriteLine(circularPrimeSearcher(seekerPrimes()));
+            amount = findAmountCircularPrime(findAllPrimes(finalNumber));
         }
 
-        private static List<int> seekerPrimes(int final=1000000) //search all primes
+        private static List<int> findAllPrimes(int final) //search all primes
         {
             List<int> primeNumber = new List<int>();
             primeNumber.Add(2);
@@ -46,9 +47,9 @@ namespace circularPrime
         }
 
 
-        private static int circularPrimeSearcher(List<int> primeNumber)//search all circular prime
+        private static int findAmountCircularPrime(List<int> primeNumber)//search all circular prime
         {
-            List<int> circularPrimeAmount = new List<int>();
+            int circularPrimeAmount = 0;
 
             foreach(int i in primeNumber)
             {
@@ -70,16 +71,14 @@ namespace circularPrime
                 }
 
                 if (flag)
-                    circularPrimeAmount.Add(i);
+                    ++circularPrimeAmount;
 
                 i.ToString();
-
-
 
             }
 
 
-            return circularPrimeAmount.Count;
+            return circularPrimeAmount;
         }
 
     }
