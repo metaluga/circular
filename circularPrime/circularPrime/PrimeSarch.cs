@@ -14,12 +14,7 @@ namespace circularPrime
 
         static PrimeSarch()
         {
-            Stopwatch stopWatch = new Stopwatch();
-            stopWatch.Start();
             Console.WriteLine(circularPrimeSearcher(seekerPrimes()));
-            stopWatch.Stop();
-            TimeSpan ts = stopWatch.Elapsed;
-            Console.WriteLine(ts);
         }
 
         private static List<int> seekerPrimes(int final=1000000) //search all primes
